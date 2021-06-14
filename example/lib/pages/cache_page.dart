@@ -8,7 +8,7 @@ class CachePage extends StatefulWidget {
 }
 
 class _CachePageState extends State<CachePage> {
-  BetterPlayerController _betterPlayerController;
+  late BetterPlayerController _betterPlayerController;
 
   @override
   void initState() {
@@ -50,6 +50,12 @@ class _CachePageState extends State<CachePage> {
             aspectRatio: 16 / 9,
             child: BetterPlayer(controller: _betterPlayerController),
           ),
+          TextButton(
+            child: Text("Clear cache"),
+            onPressed: () {
+              _betterPlayerController.clearCache();
+            },
+          )
         ],
       ),
     );
